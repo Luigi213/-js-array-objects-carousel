@@ -76,6 +76,7 @@ up.addEventListener('click', function(){
 document.querySelector('.play').addEventListener('click', function(){
     playAuto = setInterval(autoplay, 3000);
 });
+
 document.querySelector('.stop').addEventListener('click',function(){
     clearInterval(playAuto);
 });
