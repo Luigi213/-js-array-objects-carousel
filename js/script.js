@@ -3,7 +3,8 @@
 // - url dell’immagine
 // - titolo
 // - descrizione
-//Milestone 1: Ora rimuoviamo i contenuti statici e usiamo l’array di oggetti letterali per popolare dinamicamente il carosello.   Al click dell'utente sulle frecce verso sinistra o destra, l'immagine attiva diventerà visibile e dovremo aggiungervi titolo e testo.
+//Milestone 1: Ora rimuoviamo i contenuti statici e usiamo l’array di oggetti letterali per popolare dinamicamente il carosello. Al click dell'utente sulle frecce verso sinistra o destra, l'immagine attiva diventerà visibile e dovremo aggiungervi titolo e testo.
+//Milestone 2: Aggiungere il **ciclo infinito** del carosello. Ovvero se la miniatura attiva è la prima e l'utente clicca la freccia verso destra, la miniatura che deve attivarsi sarà l'ultima e viceversa per l'ultima miniatura se l'utente clicca la freccia verso sinistra.
 let videogamesArray = [
     {
         img: '01.webp',
@@ -46,20 +47,11 @@ let itemsActive = 0;
 active[itemsActive].classList.add('active');
 
 const down = document.getElementById('down')
-const up = document.getElementById('up')
+const up = document.getElementById('up');
 
-down.addEventListener('click', function(){
-    active[itemsActive].classList.remove('active');
-    active[itemsActive].classList.remove('active');
-    if(itemsActive == 4){
-        itemsActive = 0;
-    }
-    else{
-        itemsActive++;
-    }
-    active[itemsActive].classList.add('active');
-    active[itemsActive].classList.add('active');
-})
+let playAuto = setInterval(autoplay, 3000);
+
+down.addEventListener('click', autoplay)
 
 up.addEventListener('click', function(){
     active[itemsActive].classList.remove('active');
@@ -73,3 +65,16 @@ up.addEventListener('click', function(){
     active[itemsActive].classList.add('active');
     active[itemsActive].classList.add('active');
 })
+
+function autoplay(){
+    active[itemsActive].classList.remove('active');
+    active[itemsActive].classList.remove('active');
+    if(itemsActive == 4){
+        itemsActive = 0;
+    }
+    else{
+        itemsActive++;
+    }
+    active[itemsActive].classList.add('active');
+    active[itemsActive].classList.add('active');
+}
