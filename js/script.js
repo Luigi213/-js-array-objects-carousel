@@ -37,7 +37,7 @@ const image = document.querySelector('.image-left');
 const thumbnails = document.querySelector('.thumbnails');
 
 videogamesArray.forEach((elem) => {
-    image.innerHTML += `<div class="item"><img src="./img/${elem.img}" alt="${elem.img}"></div>`
+    image.innerHTML += `<div class="item"><img src="./img/${elem.img}" alt="${elem.img}"><div class="descrition"><h2>${elem.title}</h2><p>${elem.descrition}</p></div></div>`
     thumbnails.innerHTML += `<div class="image-thum"><img src="./img/${elem.img}" alt="${elem.img}"></div>`
 });
 

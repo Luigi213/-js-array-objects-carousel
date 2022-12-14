@@ -45,6 +45,16 @@ button{
 
 .item{
     display: none;
+    position: relative;
+}
+
+.descrition{
+    position: absolute;
+    bottom: 5%;
+    left: 15%;
+    color: white;
+    line-height: 30px;
+    text-align: right;
 }
 
 .item.active{
