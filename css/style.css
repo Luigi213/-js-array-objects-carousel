@@ -29,15 +29,26 @@ button{
 }
 
 .image{
-    width: 100%;
-    height: 50vh;
     position: relative;
 }
 
-.image img{
+.image, .image-left, .item{
     width: 100%;
-    height: 100%;
+    height: 50vh;
+}
+
+.image-left .item img{
+    width: 80%;
+    height: 99.9%;
     object-fit:cover;
+}
+
+.item{
+    display: none;
+}
+
+.item.active{
+    display: block;
 }
 
 /* thumbnails */
@@ -56,6 +67,8 @@ button{
 }
 
 .image-thum img{
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 

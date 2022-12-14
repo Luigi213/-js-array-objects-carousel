@@ -31,3 +31,45 @@ let videogamesArray = [
         descrition: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit eum harum numquam?',
     }
 ]
+
+const image = document.querySelector('.image-left');
+const thumbnails = document.querySelector('.thumbnails');
+
+videogamesArray.forEach((elem) => {
+    image.innerHTML += `<div class="item"><img src="./img/${elem.img}" alt="${elem.img}"></div>`
+    thumbnails.innerHTML += `<div class="image-thum"><img src="./img/${elem.img}" alt="${elem.img}"></div>`
+});
+
+
+const active = document.getElementsByClassName('item');
+let itemsActive = 0;
+active[itemsActive].classList.add('active');
+
+const down = document.getElementById('down')
+const up = document.getElementById('up')
+
+down.addEventListener('click', function(){
+    active[itemsActive].classList.remove('active');
+    active[itemsActive].classList.remove('active');
+    if(itemsActive == 4){
+        itemsActive = 0;
+    }
+    else{
+        itemsActive++;
+    }
+    active[itemsActive].classList.add('active');
+    active[itemsActive].classList.add('active');
+})
+
+up.addEventListener('click', function(){
+    active[itemsActive].classList.remove('active');
+    active[itemsActive].classList.remove('active');
+    if(itemsActive == 0){
+        itemsActive = 4;
+    }
+    else{
+        itemsActive--;
+    }
+    active[itemsActive].classList.add('active');
+    active[itemsActive].classList.add('active');
+})
