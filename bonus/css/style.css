@@ -81,6 +81,7 @@ button{
 
 .image-thum{
     filter: brightness(0.5);
+    cursor: pointer;
 }
 
 .image-thum img{

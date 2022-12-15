@@ -51,6 +51,21 @@ active[itemsActive].classList.add('active');
 const activeThum = document.getElementsByClassName('image-thum');
 activeThum[itemsActive].classList.add('active-thum')
 
+for(let i=0; i<activeThum.length; i++){
+    let thum = activeThum[i]
+    thum.addEventListener('click', function(){
+        active[itemsActive].classList.remove('active');
+        active[itemsActive].classList.remove('active');
+        activeThum[itemsActive].classList.remove('active-thum')
+
+        itemsActive = i
+
+        active[itemsActive].classList.add('active');
+        active[itemsActive].classList.add('active');
+        activeThum[itemsActive].classList.add('active-thum')
+    });
+};
+
 const down = document.getElementById('down');
 const up = document.getElementById('up');
 
